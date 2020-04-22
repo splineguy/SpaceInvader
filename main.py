@@ -15,9 +15,12 @@ pygame.display.set_icon(icon)
 playerImg = pygame.image.load('player.png')
 playerX = 370
 playerY = 480
+playerX_change = 0
 
-def player():
-    screen.blit(playerImg, (playerX, playerY))
+
+def player(x, y):
+    screen.blit(playerImg, (x, y))
+
 
 running = True
 while running:
@@ -28,6 +31,6 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    player()
+    player(playerX, playerY)
 
     pygame.display.update()  # ALWAYS INCLUDE IN PYGAME
